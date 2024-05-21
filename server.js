@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: 'http://localhost:8080',  // Ovo dozvoljava zahtjeve samo s ovog porijekla
+  origin: 'https://fitbuddystranica.netlify.app',  // Ovo dozvoljava zahtjeve samo s ovog porijekla
   methods: ['GET', 'POST', 'PATCH'],  // Trebate dodati 'PATCH' ovdje
   allowedHeaders: ['Content-Type', 'Authorization']
 };
