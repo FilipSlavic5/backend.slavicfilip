@@ -26,10 +26,10 @@ app.use(bodyParser.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://fitbuddystranica.netlify.app',  // Ovo dozvoljava zahtjeve samo s ovog porijekla
-  methods: ['GET', 'POST', 'PATCH'],  // Trebate dodati 'PATCH' ovdje
+  origin: ['http://localhost:8080', 'https://fitbuddystranica.netlify.app', 'https://filipslavic.netlify.app'], // List of allowed origins
+  methods: ['GET', 'POST', 'PATCH'],  // Add 'PATCH' method here
   allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 200 // neka bude siguran za starije browsere
+  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
 app.use(cors(corsOptions));
