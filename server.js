@@ -28,7 +28,8 @@ app.use(bodyParser.json());
 const corsOptions = {
   origin: 'https://fitbuddystranica.netlify.app',  // Ovo dozvoljava zahtjeve samo s ovog porijekla
   methods: ['GET', 'POST', 'PATCH'],  // Trebate dodati 'PATCH' ovdje
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200 // neka bude siguran za starije browsere
 };
 
 app.use(cors(corsOptions));
