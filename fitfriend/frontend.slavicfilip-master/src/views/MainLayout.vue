@@ -15,8 +15,13 @@
       </ul>
     </nav>
 
-    <!-- Ovdje će se učitati odgovarajuća komponenta -->
+    
     <router-view />
+
+    
+    <div class="footer-container">
+      <div class="footer-text">@FIPU FittBuddy Aplikacija</div>
+    </div>
   </div>
 </template>
 
@@ -33,34 +38,42 @@ export default {
   },
 
   methods: {
-  logout() {
-    // Postavljanje statusa registracije korisnika na false
-    this.$store.commit('setUserRegistered', false);
-    // Resetovanje trenutnog korisnika na null
-    this.$store.commit('setCurrentUser', null);
-    // Resetovanje svih korisničkih podataka, uključujući zahtjeve za prijateljstvo
-    this.$store.commit('RESET_USER_DATA');
-    // Preusmjeravanje korisnika na stranicu za registraciju
-    this.$router.push('/register');
-  },
-  navigateToProfile() {
-    // Navigacija na korisnički profil
-    this.$router.push('/main/profile');
+    logout() {
+      
+      this.$store.commit('setUserRegistered', false);
+     
+      this.$store.commit('setCurrentUser', null);
+      
+      this.$store.commit('RESET_USER_DATA');
+      
+      this.$router.push('/register');
+    },
+    navigateToProfile() {
+     
+      this.$router.push('/main/profile');
+    }
   }
 }
-}
-
 </script>
 
 <style scoped>
-/* Vaš CSS ovdje */
-/* Stilovi za komponentu */
+.main-layout {
+  position: relative;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  background-image: url('@/assets/slikazateretanu.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .navbar {
-  background: linear-gradient(135deg, #007bff, #0056b3); /* Dodan lagani gradijent */
-  padding: 15px 0; /* Povećana visina navbara */
+  background-color: #007bff; 
+  padding: 15px 0; 
   border-radius: 8px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dodano: neumorfizam za navbar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar ul {
@@ -68,7 +81,7 @@ export default {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center; /* Centriranje linkova */
+  align-items: center; 
 }
 
 .navbar li {
@@ -79,22 +92,22 @@ export default {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  padding: 10px 15px; /* Povećana veličina navigacijskih linkova */
+  padding: 10px 15px; 
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 4px;
 }
 
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Promijenjena boja pozadine na hover */
+  background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .logout-button,
 .username-button {
-  padding: 10px 15px; /* Povećana veličina gumba */
+  padding: 10px 15px; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Dodano: mikro-interakcija za boju i sjenu */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .logout-button {
@@ -104,20 +117,34 @@ export default {
 
 .logout-button:hover {
   background-color: #c82333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodano: neumorfizam za gumb */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .username-button {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: #fff;
 }
 
 .username-button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodano: neumorfizam za gumb */
+  background-color: #004494;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .username-button:focus {
   outline: none;
+}
+
+.footer-container {
+  margin-top: auto; 
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8); 
+  border-top: 1px solid #ccc; 
+}
+
+.footer-text {
+  text-transform: uppercasee; 
+  font-size: 12px; 
+  color: #000; 
 }
 </style>

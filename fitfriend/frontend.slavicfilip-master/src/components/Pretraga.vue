@@ -164,7 +164,6 @@ export default {
   margin: 0 auto;
   padding: 20px;
   background: #f0f0f0;
-  box-shadow: 8px 8px 15px #aaa, -8px -8px 15px #fff;
   border-radius: 10px;
 }
 

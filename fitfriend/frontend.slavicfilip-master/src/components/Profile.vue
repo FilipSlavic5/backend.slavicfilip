@@ -52,7 +52,7 @@ export default {
     },
 
     async saveProfile() {
-  console.log('Saving profile...'); // Provjerite je li metoda pozvana
+  console.log('Saving profile...'); 
   if (!this.userEmail) {
     console.error('Email korisnika nije dostupan.');
     return;
@@ -82,9 +82,8 @@ export default {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  box-shadow: 8px 8px 20px #ccc, -8px -8px 20px #fff; /* Neumorfizam efekt */
   border-radius: 10px;
-  background: #f0f0f0; /* Blaga siva za soft UI efekt */
+  background: #f0f0f0; 
 }
 
 .profile form {
@@ -97,7 +96,7 @@ export default {
 .profile label {
   margin-top: 12px;
   font-weight: bold;
-  color: #555; /* Malo jača boja za bolji kontrast */
+  color: #555; 
 }
 
 .profile input, .profile button {
@@ -106,12 +105,12 @@ export default {
   margin-top: 10px;
   border: none;
   border-radius: 8px;
-  box-shadow: inset 2px 2px 5px #bababe, inset -5px -5px 10px #fff; /* Unutarnje sjene za neumorfizam */
+  box-shadow: inset 2px 2px 5px #bababe, inset -5px -5px 10px #fff; 
   transition: all 0.3s ease;
 }
 
 .profile input:focus, .profile button:focus {
-  box-shadow: inset 1px 1px 2px #bababe, inset -1px -1px 2px #fff; /* Manje izražene sjene za fokus */
+  box-shadow: inset 1px 1px 2px #bababe, inset -1px -1px 2px #fff; 
 }
 
 .profile button {
@@ -124,8 +123,8 @@ export default {
 
 .profile button:hover {
   background-color: #0056b3;
-  transform: translateY(-2px); /* Dizanje gumba na hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Dodavanje vanjske sjene za efekt dizanja */
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .green-button {

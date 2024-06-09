@@ -42,13 +42,13 @@ export default {
   computed: {
     ...mapState({
       currentUser: state => state.currentUser,
-      selectedFriend: state => state.userProfile.selectedFriend  // Pretpostavljamo da je ovo pravilno definirano u Vuex store-u
+      selectedFriend: state => state.userProfile.selectedFriend  
     })
   },
   mounted() {
     console.log('Current selected friend in Chat.vue:', this.selectedFriend);
     if (this.selectedFriend) {
-      const URL = 'http://localhost:3000'; // Prilagodite URL prema potrebi
+      const URL = 'http://localhost:3000'; 
       console.log('Initializing WebSocket connection to:', URL);
       this.socket = io(URL);
 
@@ -127,11 +127,11 @@ export default {
 <style scoped>
 .chat-container {
   max-width: 600px;
-  margin: 40px auto; /* Centriranje komponente */
+  margin: 40px auto; 
   padding: 20px;
-  background: #f0f0f0; /* Neumorfizam - blaga siva pozadina */
+  background: #f0f0f0; 
   border-radius: 10px;
-  box-shadow: 8px 8px 20px #ccc, -8px -8px 20px #fff; /* Neumorfizam - sjene */
+
 }
 
 .chat-header {
@@ -172,39 +172,39 @@ export default {
 }
 
 .message-input {
-  padding: 12px; /* Povećavamo padding za input polje */
+  padding: 12px; 
   margin-top: 10px;
   border: none;
   border-radius: 8px;
-  box-shadow: inset 2px 2px 5px #bababe, inset -5px -5px 10px #fff; /* Neumorfizam - unutarnje sjene */
-  transition: all 0.3s ease; /* Mikro-interakcije - prijelaz */
+  box-shadow: inset 2px 2px 5px #bababe, inset -5px -5px 10px #fff; 
+  transition: all 0.3s ease; 
 }
 
 .message-input:focus {
-  box-shadow: inset 1px 1px 2px #bababe, inset -1px -1px 2px #fff; /* Neumorfizam - sjene za fokus */
+  box-shadow: inset 1px 1px 2px #bababe, inset -1px -1px 2px #fff; 
 }
 
 .send-button {
-  padding: 12px 24px; /* Povećavamo padding za gumb */
+  padding: 12px 24px; 
   background-color: #007BFF;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s, transform 0.3s ease; /* Mikro-interakcije - prijelaz */
+  transition: background-color 0.3s, transform 0.3s ease;
 }
 
 .send-button:hover {
-  background-color: #0056b3; /* Promjena boje na hover */
-  transform: translateY(-2px); /* Dizanje gumba na hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Mikro-interakcije - vanjska sjena */
+  background-color: #0056b3; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Dodavanje stilova za responzivnost */
+
 @media only screen and (max-width: 768px) {
   .chat-container {
-    max-width: 90%; /* Smanjujemo širinu komponente za manje ekrane */
+    max-width: 90%; 
   }
 }
 </style>

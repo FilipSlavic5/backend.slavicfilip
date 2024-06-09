@@ -79,7 +79,6 @@ export default {
   margin: 20px auto;
   padding: 20px;
   background: #f0f0f0;
-  box-shadow: 8px 8px 15px #aaa, -8px -8px 15px #fff;
   border-radius: 10px;
 }
 
@@ -112,12 +111,12 @@ export default {
 .task-item:before {
   content: '•';
   margin-right: 10px;
-  color: #28a745; /* Zelena za aktivan zadatak */
+  color: #28a745; 
   transition: color 0.3s ease;
 }
 
 .task-item.completed-task:before {
-  color: #ccc; /* Siva za dovršene zadatke */
+  color: #ccc; 
 }
 
 .task-item:hover {
