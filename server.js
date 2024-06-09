@@ -26,10 +26,10 @@ app.use(bodyParser.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: ['http://localhost:8080', 'https://fitbuddystranica.netlify.app', 'https://filipslavic.netlify.app'], // List of allowed origins
-  methods: ['GET', 'POST', 'PATCH'],  // Add 'PATCH' method here
+  origin: ['http://localhost:8080', 'https://fitbuddystranica.netlify.app', 'https://filipslavic.netlify.app'], 
+  methods: ['GET', 'POST', 'PATCH'],  
   allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200 
 };
 
 app.use(cors(corsOptions));
