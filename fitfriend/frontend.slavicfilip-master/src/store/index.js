@@ -13,7 +13,7 @@ const store = createStore({
     },
     tasks: [],
     friendRequests: [],
-    friends: []  // Dodajte ovo za pohranu liste prijatelja
+    friends: []  
   },
   mutations: {
     setCurrentUser(state, user) {
@@ -38,7 +38,7 @@ const store = createStore({
     removeFriendRequest(state, requesterEmail) {
       state.friendRequests = state.friendRequests.filter(req => req.requester !== requesterEmail);
     },
-    setFriends(state, friends) {  // Postavite prijatelje u stanje
+    setFriends(state, friends) {  
       state.friends = friends;
     },
     setSelectedFriend(state, friend) {
@@ -65,7 +65,7 @@ const store = createStore({
         .catch(error => console.error("Error fetching tasks:", error));
     },
     addTask({ commit }, task) {
-      commit('addTask', task);  // Pretpostavlja se da zadatak već dolazi s backend-a
+      commit('addTask', task);  
     },
     fetchFriendRequests({ commit, state }) {
       if (state.currentUser) {
@@ -92,7 +92,7 @@ const store = createStore({
           .then(response => {
             const friends = response.data.map(email => ({
               email: email,
-              name: email.split('@')[0] // Ovo je samo primjer
+              name: email.split('@')[0] 
             }));
             console.log('Friends fetched:', response.data);
             commit('setFriends', response.data);
