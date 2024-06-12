@@ -12,8 +12,7 @@ exports.register = async (req, res) => {
     }
     const hashedPassword = bcrypt.hashSync(password, 10);
     const newUser = new User({
-      firstname,
-      lastname,
+      
       email,
       password: hashedPassword
     });
@@ -38,8 +37,7 @@ exports.login = async (req, res) => {
       token,
       user: {
         id: user._id,
-        firstname: user.firstname,
-        lastname: user.lastname,
+       
         email: user.email
       }
     });
